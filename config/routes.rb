@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
+  namespace :users do
+    resource :guest, :only => [ :create ]
+  end
+
 	root to: "questions#index"
 
 	post "/votes", to: "votes#upvote", as: "upvote"

@@ -7,9 +7,11 @@
 <nav>
   <ul class="navigation">
     <% if user_signed_in? %>
+      <li><%= current_user.name %></li>
       <li><%= link_to "Sign out", destroy_user_session_path %></li>
     <% else %>
       <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li>
+      <li><%= link_to "Sign in as Guest", users_guest_path, :method => :post %></li>
     <% end %>
   </ul>
 </nav>
