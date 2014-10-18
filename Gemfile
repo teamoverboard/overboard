@@ -9,6 +9,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 
+gem 'html-pipeline'
+gem 'github-markdown'
+
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails'

@@ -18,7 +18,7 @@
   	<% else %>
   	  <%= "\u25B2" %>
   	<% end %>
-  	<%= answer.content %>
+  	<%= parse(answer.content).html_safe %>
   </p>
 <% end %>
 
