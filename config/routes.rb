@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions]
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}, skip: [:sessions]
 
   devise_scope :user do
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+    get :sign_out, to: 'devise/sessions#destroy', as: 'destroy_user_session'
   end
 
   namespace :users do
-    resource :guest, :only => [ :create ]
+    resource :guest, only: [:create]
   end
 
-	root to: "questions#index"
-
-	post "/votes", to: "votes#upvote", as: "upvote"
-	get "/questions/:id/:title", to: "questions#show", as: "question"
-
-	resources :questions
-	resources :answers
-	resources :votes
+	post 'votes', to: 'votes#upvote', as: 'upvote'
 
   get 'search' => 'question_searches#show'
+	get 'questions/:id/:title', to: 'questions#show', as: 'question'
+  get 'q/:id', to: 'tiny_url_redirects#question', as: 'tiny_question'
+
+  resources :questions
+	resources :answers
+
+  root to: 'questions#index'
 end

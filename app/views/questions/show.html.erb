@@ -6,6 +6,8 @@
 
 <p><%= @question.description %></p>
 
+<p><%= text_field_tag 'tiny_url', tiny_question_url(@question) %></p>
+
 <% if @question.answers.empty? %>
   <p>Be the first to answer this question.</p>
 <% end %>
