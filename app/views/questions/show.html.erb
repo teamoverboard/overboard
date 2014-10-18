@@ -3,3 +3,18 @@
 <h2><%= @question.title %></h2>
 
 <p><%= @question.description %></p>
+
+<% if @question.answers.empty? %>
+  <p>Be the first to answer this question.</p>
+<% end %>
+
+<% @question.answers.each do |answer| %>
+  <p><%= answer.content %></p>
+<% end %>
+
+<%= form_for @answer do |f| %>
+  <%= f.label :content, "Post an answer:" %>
+  <%= f.hidden_field :question_id, value: @question.id %>
+  <p><%= f.text_area :content %></p>
+  <p><%= f.submit %></p>
+<% end %>
