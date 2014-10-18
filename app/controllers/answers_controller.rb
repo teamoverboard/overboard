@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
 		@answer = Answer.new(answer_params)
 
 		if @answer.save
-			redirect_to question_url(@answer.question)
+			redirect_to(:back)
 		else
 			render :new
 		end

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	root to: "questions#index"
 
 	post "/votes", to: "votes#upvote", as: "upvote"
+	get "/questions/:id/:title", to: "questions#show", as: "question"
 
 	resources :questions
 	resources :answers
