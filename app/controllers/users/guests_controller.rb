@@ -51,7 +51,7 @@ class Users::GuestsController < ApplicationController
     end
   end
 
-  RANK = [ '', '', '', '', 'Master ', '', '', '' ]
+  RANK = [ '', '', '', '', 'Master ', '', '', '' ] # LOL this is a hack
   TITLES = [ 'Captain', 'First Mate', 'Quartermaster', 'Boatswain', 'Navigator', 'Sailing Master', 'Carpenter', 'Pilot', 'Gunner', 'Cook', 'Doctor', 'Powder Monkey', 'Sailor', 'Striker', 'Cabin Boy' ]
   FIRST_NAMES = [ 'Guybrush', 'Anton', 'Barrett', 'Blood', 'Bloth', 'Blubber', 'Blackeye', 'Broom', 'Contagious', 'Claw', 'Skunkbeard', 'Crook', 'Avery-the captain', 'Crow', 'Flint', 'Isabela', 'Redbeard', 'Roger', 'Shakespeare', 'Salt', 'Sparrow', 'Marley', 'LeChuck' ]
 
