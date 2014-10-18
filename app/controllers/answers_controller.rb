@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-
 	def create
 		@answer = Answer.new(answer_params)
 
@@ -13,7 +12,7 @@ class AnswersController < ApplicationController
 	private
 
 	def answer_params
-    params.require(:answer).permit(:content, :question_id, :user_id)
+    params.require(:answer).permit(:content, :question_id).merge(:user_id => current_user.id)
 	end
 
 end

@@ -1,5 +1,7 @@
 /*
- *= require normalize.css
+ *= require normalize
+ *= require github-syntax-highlighting
+
  *= require_tree .
  *= require_self
  */

@@ -1,8 +1,8 @@
 <% @questions.each do |question| %>
   <p>
   	<%= question.votes_count %>
-  	<% if current_user %>
-  		<%= link_to "\u25B2", upvote_path(voteable_id: question.id, voteable_type: "Question", user_id: current_user.id), method: :post %>
+  	<% if user_signed_in? %>
+  		<%= link_to "\u25B2", upvote_path(voteable_id: question.id, voteable_type: "Question"), method: :post %>
   	<% else %>
   	  <%= "\u25B2" %>
   	<% end %>

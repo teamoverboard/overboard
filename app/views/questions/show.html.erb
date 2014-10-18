@@ -13,8 +13,8 @@
 <% @question.answers.each do |answer| %>
   <p>
   	<%= answer.votes_count %>
-  	<% if current_user %>
-  		<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer", user_id: current_user.id ), method: :post %>
+  	<% if user_signed_in? %>
+  		<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer" ), method: :post %>
   	<% else %>
   	  <%= "\u25B2" %>
   	<% end %>
@@ -22,10 +22,9 @@
   </p>
 <% end %>
 
-<% if current_user %>
+<% if user_signed_in? %>
   <%= form_for @answer do |f| %>
     <%= f.label :content, "Post an answer:" %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :question_id, value: @question.id %>
     <p><%= f.text_area :content %></p>
     <p><%= f.submit %></p>
