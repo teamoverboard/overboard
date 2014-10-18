@@ -3,5 +3,6 @@
 <%= form_for @question do |f| %>
   <p><%= f.label :title %><%= f.text_field :title %></p>
   <p><%= f.label :description %><%= f.text_area :description %></p>
+  <p><%= f.label :channel %><%= f.autocomplete_field :channel, autocomplete_channel_name_questions_path %></p>
   <p><%= f.submit %></p>
 <% end %>

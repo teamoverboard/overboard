@@ -1,0 +1,12 @@
+<% @questions.each do |question| %>
+  <p>
+    <%= question.votes_count %>
+    <% if user_signed_in? %>
+      <%= link_to "\u25B2", upvote_path(voteable_id: question.id, voteable_type: "Question"), method: :post %>
+    <% else %>
+      <%= "\u25B2" %>
+    <% end %>
+    <%= link_to "#{question.title}", question_path(id: question.id, title: question.title.parameterize ) %>
+    <%= "asked by #{question.user_name} #{time_ago_in_words(question.created_at)} ago." %>
+  </p>
+<% end %>

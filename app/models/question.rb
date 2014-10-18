@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
 	has_many :answers
 	has_many :votes, :as => :voteable
   belongs_to :user
+  belongs_to :channel
 
   delegate :name, to: :user, prefix: true
 

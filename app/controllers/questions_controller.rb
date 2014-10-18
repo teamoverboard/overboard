@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, :only => [ :new, :create ]
+  autocomplete :channel, :name
 
   def index
     @questions = Question.all.order('created_at DESC')
@@ -13,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-    	redirect_to @question
+    	redirect_to tiny_question_path(@question)
     else
     	render 'new'
     end
@@ -27,6 +28,14 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-  	params.require(:question).permit(:title, :description).merge(:user_id => current_user.id)
+  	params.require(:question).permit(:title, :description).merge(:user_id => current_user.id, :channel_id => channel.id)
+  end
+
+  def channel
+    Channel.find_or_create(channel_name)
+  end
+
+  def channel_name
+    params.require(:question).permit(:channel)['channel']
   end
 end

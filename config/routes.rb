@@ -15,8 +15,12 @@ Rails.application.routes.draw do
 	get 'questions/:id/:title', to: 'questions#show', as: 'question'
   get 'q/:id', to: 'tiny_url_redirects#question', as: 'tiny_question'
 
-  resources :questions
+  resources :questions do
+    get :autocomplete_channel_name, :on => :collection
+  end
+
 	resources :answers
+  resources :channels
 
   root to: 'questions#index'
 end
