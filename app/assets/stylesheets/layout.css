@@ -30,6 +30,14 @@ header .container {
   margin-top: 0.25em;
 }
 
+.title a {
+  color: black;
+}
+
+.title a:hover {
+  color: #444;
+}
+
 .search {
   flex: 1;
   margin-top: 0.5em;
@@ -57,7 +65,20 @@ main {
   flex: 1;
 }
 
+main .container {
+  flex-direction: column;
+}
+
 footer {
   font-size: 0.85em;
   background: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #318bff;
+}
+
+a:hover {
+
 }
