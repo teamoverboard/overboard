@@ -1,7 +1,9 @@
 <h1 class="title"><%= link_to 'Overboard', root_url %></h1>
 
-<form class="search">
+<%= form_tag search_path, class: 'search', method: :get do %>
   <input class="search-query" type="text" name="query" placeholder="What is Overboard?">
+<% end %>
+
 </form>
 
 <nav>

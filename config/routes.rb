@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 	resources :questions
 	resources :answers
 	resources :votes
+
+  get 'search' => 'question_searches#show'
 end

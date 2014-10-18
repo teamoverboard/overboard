@@ -12,6 +12,8 @@ gem 'omniauth-github'
 gem 'html-pipeline'
 gem 'github-markdown'
 
+gem 'pg_search'
+
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
