@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [ :github ]
 
+  has_many :answers
+  has_many :questions
+  has_many :votes
+
   def self.from_omniauth(auth)
     where( auth.slice(:provider, :uid).to_hash ).first_or_create! do |user|
       user.email = auth.info.email
