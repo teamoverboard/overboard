@@ -13,7 +13,11 @@
 <% @question.answers.each do |answer| %>
   <p>
   	<%= answer.votes_count %>
-  	<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer" ), method: :post %>
+  	<% if current_user %>
+  		<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer", user_id: current_user.id ), method: :post %>
+  	<% else %>
+  	  <%= "\u25B2" %>
+  	<% end %>
   	<%= answer.content %>
   </p>
 <% end %>
