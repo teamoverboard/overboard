@@ -11,7 +11,11 @@
 <% end %>
 
 <% @question.answers.each do |answer| %>
-  <p><%= answer.content %></p>
+  <p>
+  	<%= answer.votes_count %>
+  	<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer" ), method: :post %>
+  	<%= answer.content %>
+  </p>
 <% end %>
 
 <%= form_for @answer do |f| %>
