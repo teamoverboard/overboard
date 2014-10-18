@@ -3,36 +3,61 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.bg {
-  background: #eee;
-  position: absolute;
-  height: 3em;
-  width: 100%;
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.pagewrap {
-  margin: 0 auto;
+.container {
   width: 960px;
   min-width: 200px;
+  margin: auto;
+  display: flex;
 }
 
 header {
-  position: relative;
-  height: 3em;
-  padding-top: 0.5em;
+  background: #eee;
 }
 
-h1 {
+header .container {
+  height: 3em;
+}
+
+.title {
   margin: 0;
+  flex: 1;
+  margin-top: 0.25em;
+}
+
+.search {
+  flex: 1;
+  margin-top: 0.5em;
+}
+
+.search-query {
+  width: 100%;
+}
+
+nav {
+  flex: 1;
 }
 
 .navigation {
+  font-size: 0.85em;
   list-style: none;
   margin: 0;
-  float: right;
 }
 
 .navigation li {
-  float: left;
-  margin-left: 1em;
+  float: right;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  font-size: 0.85em;
+  background: #eee;
 }

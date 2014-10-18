@@ -1,0 +1,15 @@
+<h1 class="title">Overboard</h1>
+
+<form class="search">
+  <input class="search-query" type="text" name="query" placeholder="What is Overboard?">
+</form>
+
+<nav>
+  <ul class="navigation">
+    <% if user_signed_in? %>
+      <li><%= link_to "Sign out", destroy_user_session_path %></li>
+    <% else %>
+      <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li>
+    <% end %>
+  </ul>
+</nav>
