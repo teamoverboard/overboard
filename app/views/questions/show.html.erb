@@ -21,6 +21,7 @@
   	  <%= "\u25B2" %>
   	<% end %>
   	<%= parse(answer.content).html_safe %>
+    <p>Answered by <%= link_to "#{answer.user_name}", user_path(id: answer.user_id, name: answer.user_name.parameterize) %> <%= time_ago_in_words(answer.created_at) %> ago.</p>
   </p>
 <% end %>
 
