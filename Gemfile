@@ -5,9 +5,14 @@ gem 'jquery-rails', '4.0.0.beta2'
 gem 'rails', '4.2.0.beta2'
 gem 'pg'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :production do
