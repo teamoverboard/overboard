@@ -2,8 +2,8 @@
   <%= render partial: "shared/vote", locals: { voteable: answer, voteable_type: "Answer" } %>
 
   <div class="answer__card__content">
-    <%= image_tag answer.user.gravatar_url, class: 'avatar__small' %>
-    <%= parse(answer.content).html_safe %><p>
+    <div class="avatar__small"><%= image_tag answer.user.gravatar_url %></div>
+    <div class="answer__card__body"><%= parse(answer.content).html_safe %></div>
     <p class="answer__card__about">Answered by <%= link_to answer.user.name, user_path(id: answer.user_id, username: answer.user.username) %> <%= time_ago_in_words(answer.created_at) %> ago.</p>
   </div>
   <%= render partial: 'common/comment', locals: { :comments => answer.comments, :commentable => answer } %>

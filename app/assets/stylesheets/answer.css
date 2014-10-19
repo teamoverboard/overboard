@@ -1,5 +1,7 @@
 .answer__card__content {
-  padding-left: 60px;
+  min-height: 100px;
+  padding: 15px;
+  margin: 0 0 0 60px;
 }
 
 .answer__card {
@@ -14,4 +16,8 @@
 .answer__card__about {
   font-size: 0.85em;
   margin: 0;
+}
+
+.answer__card__body {
+  clear: both;
 }

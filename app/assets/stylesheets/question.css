@@ -14,6 +14,9 @@
 }
 
 .question__card__content {
+  min-height: 100px;
+  padding-top: 15px;
+  margin: 0 0 0 60px;
 }
 
 .question__card__about {
