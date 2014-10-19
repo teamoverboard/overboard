@@ -3,6 +3,7 @@ Answer.destroy_all
 Vote.destroy_all
 User.destroy_all
 Channel.destroy_all
+Comment.destroy_all
 
 user1 = Guest.create
 user2 = Guest.create
@@ -11,9 +12,12 @@ user4 = Guest.create
 
 channel1 = Channel.create(name: 'default')
 
+
 question1 = Question.create(title: "What is Overboard?", user: user1, channel: channel1)
-	Answer.create(question_id: question1.id, content: "Overboard helps companies keep frequently asked questions,
-		and their answers, in one place. It's like a second brain for your business.", user: user2)
+  answer1 = Answer.create(question_id: question1.id, content: "Overboard helps companies keep frequently asked questions,
+    and their answers, in one place. It's like a second brain for your business.", user: user2)
+
+comment1 = Comment.create(body: 'I like this answer!', user: user4, commentable: answer1)
 
 question2 = Question.create(title: "Who should win Rails Rumble 2014?", user: user2, channel: channel1)
   Answer.create(question_id: question2.id, content: "We're biased, but it's pretty clear the Overboard team should win.", user: user3)

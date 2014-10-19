@@ -1,7 +1,6 @@
 <%- title @question.title %>
 
 <%= render partial: "shared/question", locals: { question: @question } %>
-
 <%= render partial: "shared/question_answers", locals: { question: @question } %>
 
 <% if user_signed_in? %>

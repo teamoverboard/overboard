@@ -1,0 +1,10 @@
+<% commentable.comments.each do |comment| %>
+  <div class="comment">
+    <span class="comment__body"><%= comment.body %></span> - <span class="comment__user"><%= comment.user_name %></span>
+  </div>
+<% end %>
+<% if user_signed_in? %>
+  <%= form_for [commentable, Comment.new] do |f| %>
+    <%= f.text_field :body, placeholder: "Comment.." %>
+  <% end %>
+<% end %>

@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
     where( auth.slice(:provider, :uid).to_hash ).first_or_create! do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
+      user.username = auth.info.name.downcase.gsub(' ', '_')
     end.tap do |user|
       user.update_attributes(:name => auth.info.name, :email => auth.info.email)
     end

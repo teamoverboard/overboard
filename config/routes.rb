@@ -19,9 +19,13 @@ Rails.application.routes.draw do
 
   resources :questions do
     get :autocomplete_channel_name, :on => :collection
+    resources :comments
   end
 
-	resources :answers
+	resources :answers do
+    resources :comments
+  end
+
   resources :channels
   resources :users
 
