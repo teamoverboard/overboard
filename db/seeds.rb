@@ -26,4 +26,4 @@ question3 = Question.create(title: "Who are the creators of Overboard?", user: u
   Answer.create(question_id: question3.id, content: "Overboard is developed by Martin Jagusch, Shervin Aflatooni,
   	Mario Visic and Natasha Postolovski.", user: user4)
 
-puts "Created #{Question.count} questions with #{Answer.count} answers."
+puts "Created #{Question.count} questions with #{Answer.count} answers and #{Comment.count} comments."
