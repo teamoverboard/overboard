@@ -1,9 +1,8 @@
 <div class="vote">
   <% if user_signed_in? %>
-    <%#= link_to "\u25B2", upvote_path(voteable_id: voteable.id, voteable_type: voteable_type), method: :post %>
+    <%= link_to ">", upvote_path(voteable_id: voteable.id, voteable_type: voteable_type), method: :post, class: "vote__arrow" %>
   <% else %>
-    <%#= "\u25B2" %>
+    <span class="vote__arrow--disabled">></span>
   <% end %>
-  <a href="javascript:void(0)" class="vote__arrow">></a>
   <div class="vote__count"><%= voteable.votes_count || 0 %></div>
 </div>

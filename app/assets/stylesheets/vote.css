@@ -32,3 +32,20 @@
 .vote__arrow:hover {
   color: #ff6a33;
 }
+
+.vote__arrow--disabled {
+  color: #aaa;
+  display: block;
+  line-height: 38px;
+  position: absolute;
+  /*background-color: yellow;*/
+  top: 0;
+  left: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: bold;
+  font-size: 2em;
+  /*padding: 15px;*/
+  margin-left: 6px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
