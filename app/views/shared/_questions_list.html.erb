@@ -1,11 +1,5 @@
-<% questions.each do |question| %>
-	<p>
-		<%= render partial: "shared/vote", locals: { voteable: question, voteable_type: "Question" } %>
-    <%= image_tag question.user.gravatar_url, class: 'avatar__small' %>
-		<%= link_to "#{question.title}", question_path(id: question.id, title: question.title.parameterize ) %>
-	</p>
-	<p>
-		Asked by <%= link_to "#{question.user.username}", user_path(id: question.user_id, username: question.user.username) %>
-	  <%= time_ago_in_words(question.created_at) %> ago.
-	</p>
-<% end %>
+<ul class="question__list">
+  <% questions.each do |question| %>
+    <li class="question__card__item"><%= render partial: "shared/question_card", locals: { question: question } %></li>
+  <% end %>
+</ul>

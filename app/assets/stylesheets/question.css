@@ -1,0 +1,17 @@
+.question__list {
+  list-style-type: none;
+}
+
+.question__card__item {
+  height: 81px;
+  margin-bottom: 20px;
+}
+
+.question__card {
+  height: 100%;
+}
+
+.question__card__content {
+  float: left;
+  width: 95%;
+}
