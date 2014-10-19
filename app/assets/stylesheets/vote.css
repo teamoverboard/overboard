@@ -2,8 +2,10 @@
   border: 1px solid #e1e1e1;
   width: 40px;
   position: relative;
-  padding-top: 40px;
+  padding-top: 47px;
   text-align: center;
+  float: left;
+  margin-right: 5px;
 }
 
 .vote__count {
@@ -22,7 +24,7 @@
   font-weight: bold;
   font-size: 2em;
   /*padding: 15px;*/
-  /*margin-left: -2px;*/
+  margin-left: 6px;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
