@@ -8,7 +8,7 @@
       <%= link_to question.channel.name, channel_path(question.channel.name) %>
     </div>
     <div>
-      Asked by <%= link_to "#{question.user.username}", user_path(id: question.user_id, username: question.user.username) %> <%= time_ago_in_words(question.created_at) %> ago.
+      <p class="question__card__about">Asked by <%= link_to question.user.name, user_path(id: question.user_id, username: question.user.username) %> <%= time_ago_in_words(question.created_at) %> ago.</p>
     </div>
   </div>
 </div>

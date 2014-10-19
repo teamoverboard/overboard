@@ -95,6 +95,7 @@ a:hover {}
 .side-bar {
   flex: 1;
   max-width: 220px;
+  margin-left: 3em;
 }
 
 .main-content {

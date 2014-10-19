@@ -15,3 +15,8 @@
 
 .question__card__content {
 }
+
+.question__card__about {
+  font-size: 0.85em;
+  margin: 0;
+}

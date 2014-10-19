@@ -1,5 +1,4 @@
 .answer__card__content {
-  padding-left: 50px;
 }
 
 .answer__card {
@@ -9,4 +8,9 @@
 .answer__list {
   list-style-type: none;
   padding: 0;
+}
+
+.answer__card__about {
+  font-size: 0.85em;
+  margin: 0;
 }

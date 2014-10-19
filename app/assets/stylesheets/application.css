@@ -6,3 +6,7 @@
  *= require_tree .
  *= require_self
  */
+
+.answer__card__about {
+  display: none;
+}
