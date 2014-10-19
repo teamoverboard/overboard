@@ -1,43 +1,4 @@
 <h2><%= @user.name %></h2>
 
-<% if @user.questions.any? %>
-	<h3>Questions</h3>
-<% end %>
-
-<% @user.questions.each do |question| %>
-  <p>
-  	<%= question.votes_count %>
-  	<% if user_signed_in? %>
-  		<%= link_to "\u25B2", upvote_path(voteable_id: question.id, voteable_type: "Question"), method: :post %>
-  	<% else %>
-  	  <%= "\u25B2" %>
-  	<% end %>
-  	<%= link_to "#{question.title}", question_path(id: question.id, title: question.title.parameterize ) %>
-  	<p>Asked <%= time_ago_in_words(question.created_at) %> ago.</p>
-  </p>
-<% end %>
-
-<% if @user.answers.any? %>
-	<h3>Answers</h3>
-<% end %>
-
-<% @user.answers.each do |answer| %>
-<p>
-	<%= answer.question.votes_count %>
-	<% if user_signed_in? %>
-		<%= link_to "\u25B2", upvote_path(voteable_id: answer.question_id, voteable_type: "Question"), method: :post %>
-	<% else %>
-	  <%= "\u25B2" %>
-	<% end %>
-	<%= link_to "#{answer.question_title}", question_path(id: answer.question_id, title: answer.question_title.parameterize ) %>
-</p>
-  	<%= answer.votes_count %>
-  	<% if user_signed_in? %>
-  		<%= link_to "\u25B2", upvote_path(voteable_id: answer.id, voteable_type: "Answer" ), method: :post %>
-  	<% else %>
-  	  <%= "\u25B2" %>
-  	<% end %>
-  	<%= parse(answer.content).html_safe %>
-    <p>Answered <%= time_ago_in_words(answer.created_at) %> ago.</p>
-  </p>
-<% end %>
+<%= render partial: "shared/user_questions", locals: { user: @user } %>
+<%= render partial: "shared/user_answers", locals: { user: @user } %>

@@ -3,5 +3,5 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
   delegate :name, :id, to: :user, prefix: true
-  delegate :title, to: :question, prefix: true
+  delegate :title, to: :question
 end

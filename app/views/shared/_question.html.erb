@@ -1,0 +1,8 @@
+<h2><%= question.title %></h2>
+
+<p>Asked by <%= link_to "#{question.user_name}", user_path(id: question.user_id, name: question.user_name) %> 
+<%=time_ago_in_words(question.created_at) %> ago.</p>
+
+<p><%= question.description %></p>
+
+<p><%= text_field_tag 'tiny_url', tiny_question_url(question) %></p>

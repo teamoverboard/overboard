@@ -1,0 +1,6 @@
+<%= voteable.votes_count %>
+<% if user_signed_in? %>
+  <%= link_to "\u25B2", upvote_path(voteable_id: voteable.id, voteable_type: voteable_type), method: :post %>
+<% else %>
+  <%= "\u25B2" %>
+<% end %>

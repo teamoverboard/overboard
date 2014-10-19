@@ -1,12 +1,1 @@
-<% @questions.each do |question| %>
-  <p>
-  	<%= question.votes_count %>
-  	<% if user_signed_in? %>
-  		<%= link_to "\u25B2", upvote_path(voteable_id: question.id, voteable_type: "Question"), method: :post %>
-  	<% else %>
-  	  <%= "\u25B2" %>
-  	<% end %>
-  	<%= link_to "#{question.title}", question_path(id: question.id, title: question.title.parameterize ) %>
-  	<p>Asked by <%= link_to "#{question.user_name}", user_path(id: question.user_id, name: question.user_name.parameterize) %> <%= time_ago_in_words(question.created_at) %> ago.</p>
-  </p>
-<% end %>
+<%= render partial: "shared/questions_list", locals: { questions: @questions } %>
