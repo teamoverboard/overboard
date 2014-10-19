@@ -1,0 +1,11 @@
+.comment {
+  margin-left: 42px;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  padding: 7px;
+}
+
+.new_comment {
+  margin-top: 10px;
+  margin-left: 41px;
+}

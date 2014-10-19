@@ -1,10 +1,2 @@
-<h2><%= question.title %></h2>
-<%= image_tag question.user.gravatar_url, class: 'avatar__small' %>
-<p>Asked by <%= link_to "#{question.user.username}", user_path(id: question.user_id, username: question.user.username) %>
-<%=time_ago_in_words(question.created_at) %> ago.</p>
-
-<p><%= question.description %></p>
-
-<p><%= text_field_tag 'tiny_url', tiny_question_url(question) %></p>
-
+<%= render partial: "shared/question_card", locals: { question: question } %>
 <%= render partial: 'common/comment', locals: { :commentable => question } %>
