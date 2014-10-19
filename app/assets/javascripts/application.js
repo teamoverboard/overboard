@@ -10,6 +10,6 @@ $( document ).ready(function() {
   Rainbow.color();
 
   $('.sign_in').click(function() {
-    $.pgwModal({target: '#sign_in_model', maxWidth: 400, closeContent: '', titleBar: false});
+    $.pgwModal({target: '#sign_in_model', maxWidth: 325, closeContent: '', titleBar: false});
   });
 });
