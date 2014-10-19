@@ -144,3 +144,13 @@ a:hover {}
     padding: 0 0.5em;
   }
 }
+
+.channel-pill {
+  display: inline;
+  padding: 2px 10px;
+  background: rgb(255, 118, 159);
+}
+
+.channel-pill > a {
+  color: white;
+}
