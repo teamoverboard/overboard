@@ -1,0 +1,37 @@
+.button-designs {
+  max-width: 220px;
+}
+
+.button {
+  display: block;
+  background-color: silver;
+  color: white;
+  text-align: center;
+  margin-bottom: 1em;
+  line-height: 2.5em;
+  border-radius: 2px;
+}
+
+.button-question {
+  background-color: #318bff;
+}
+
+.button-question:hover {
+  background-color: #5aa2ff;
+}
+
+.button-guest {
+  background-color: #ff4500;
+}
+
+.button-guest:hover {
+  background-color: #ff6a33;
+}
+
+.button-github {
+  background-color: #34ad00;
+}
+
+.button-github:hover {
+  background-color: #5dbd33;
+}
