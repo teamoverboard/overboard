@@ -1,18 +1,16 @@
+<%= link_to '', root_url, class: 'sailor sailor-header' %>
 <h1 class="title"><%= link_to 'Overboard', root_url %></h1>
 
 <%= form_tag search_path, class: 'search', method: :get do %>
   <input class="search-query" type="text" name="query" placeholder="What is Overboard?">
 <% end %>
 
-</form>
-
 <nav>
-  <ul class="navigation">
+  <p class="navigation">
     <% if user_signed_in? %>
-      <li><%= current_user.name %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path %></li>
+      <%= current_user.name %> • <%= link_to 'Sign out', destroy_user_session_path %>
     <% else %>
-      <li><a href="javascript:void(0)" class="sign_in">Sign in</a></li>
+      <a href="javascript:void(0)" class="sign_in">Sign in</a>
     <% end %>
-  </ul>
+  </p>
 </nav>
