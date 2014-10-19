@@ -7,8 +7,6 @@ class Question < ActiveRecord::Base
   belongs_to :user
   belongs_to :channel
 
-  delegate :name, to: :user, prefix: true
-
 	validates :title, presence: true
 
   pg_search_scope :search, :against => [ :title, :description ]

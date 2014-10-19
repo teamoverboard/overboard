@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 	get 'questions/:id/:title', to: 'questions#show', as: 'question'
   get 'q/:id', to: 'tiny_url_redirects#question', as: 'tiny_question'
   get 'c/:id', to: 'tiny_url_redirects#channel', as: 'tiny_channel'
-  get 'users/:id/:name', to: 'users#show', as: 'user'
+  get 'users/:id/:username', to: 'users#show', as: 'user'
 
   resources :questions do
     get :autocomplete_channel_name, :on => :collection

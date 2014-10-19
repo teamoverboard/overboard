@@ -23,7 +23,7 @@ class Guest
   end
 
   def username
-    guest_name.downcase.gsub(' ', '_')
+    "#{guest_name}_#{rand(100)}".downcase.gsub(' ', '_')
   end
 
   def email

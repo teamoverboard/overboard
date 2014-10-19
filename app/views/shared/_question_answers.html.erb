@@ -5,7 +5,7 @@
 <% question.answers.each do |answer| %>
   <p><%= render partial: "shared/vote", locals: { voteable: answer, voteable_type: "Answer" } %>
   	<%= parse(answer.content).html_safe %><p>
-  <p>Answered by <%= link_to "#{answer.user_name}", user_path(id: answer.user_id, name: answer.user_name.parameterize) %>
+  <p>Answered by <%= link_to "#{answer.user.username}", user_path(id: answer.user_id, username: answer.user.username) %>
   <%= time_ago_in_words(answer.created_at) %> ago.</p>
   <%= render partial: 'common/comment', locals: { :comments => answer.comments, :commentable => answer } %>
 <% end %>
