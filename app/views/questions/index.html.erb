@@ -1,9 +1,9 @@
 <%= render partial: "shared/questions_list", locals: { questions: @questions } %>
 
 <div class="button-designs">
-  <a class="button button-question" href="#">Ask Question</a>
-
-  <a class="button button-guest" href="#">Sign In As Guest</a>
-
-  <a class="button button-github" href="#">Sign In With GitHub</a>
+  <% if user_signed_in? %>
+    <%= link_to 'Ask Question', new_question_path, class: 'button button-question' %>
+  <% else %>
+  <a href="javascript:void(0)" class="sign_in button button-question">Ask Question</a>
+  <% end %>
 </div>

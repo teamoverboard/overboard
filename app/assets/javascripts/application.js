@@ -6,4 +6,10 @@
 //= require autocomplete-rails
 //= require_tree .
 
-Rainbow.color();
+$( document ).ready(function() {
+  Rainbow.color();
+
+  $('.sign_in').click(function() {
+    $.pgwModal({target: '#sign_in_model', maxWidth: 400, closeContent: '', titleBar: false});
+  });
+});

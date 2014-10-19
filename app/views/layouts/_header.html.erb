@@ -12,8 +12,7 @@
       <li><%= current_user.name %></li>
       <li><%= link_to "Sign out", destroy_user_session_path %></li>
     <% else %>
-      <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></li>
-      <li><%= link_to "Sign in as Guest", users_guest_path, :method => :post %></li>
+      <li><a href="javascript:void(0)" class="sign_in">Sign in</a></li>
     <% end %>
   </ul>
 </nav>

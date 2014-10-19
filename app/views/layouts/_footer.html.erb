@@ -1,1 +1,5 @@
 <p>Rails Rumble 2014 • <%= link_to 'Vote for us', 'http://railsrumble.com/entries/29-overboard' %></a></p>
+
+<% unless user_signed_in? %>
+  <%= render 'shared/sign_in' %>
+<% end %>
