@@ -2,6 +2,15 @@
   max-width: 220px;
 }
 
+.modal {
+  text-align: center;
+}
+
+.buttons {
+  margin: auto;
+  width: 75%;
+}
+
 .button {
   display: block;
   background-color: silver;

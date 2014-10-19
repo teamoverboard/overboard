@@ -1,8 +1,12 @@
-<div id="sign_in_model" class="model" style="display: none;">
-  <h1 class="curved-title">Overboard</h1>
+<div id="sign_in_model" style="display: none;">
+  <div class="modal">
+    <h1 class="curved-title">Overboard</h1>
 
-  <div class="buttons">
-    <%= link_to 'Sign in as Guest', users_guest_path, method: :post, class: 'button button-guest' %>
-    <%= link_to 'Sign In with Github', user_omniauth_authorize_path(:github), class: 'button button-github' %>
+    <div class="sailor"></div>
+
+    <div class="buttons">
+      <%= link_to 'Sign in as Guest', users_guest_path, method: :post, class: 'button button-guest' %>
+      <%= link_to 'Sign in with Github', user_omniauth_authorize_path(:github), class: 'button button-github' %>
+    </div>
   </div>
 </div>
