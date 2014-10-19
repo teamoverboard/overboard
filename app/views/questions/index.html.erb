@@ -1,9 +1,9 @@
-<%= render partial: "shared/questions_list", locals: { questions: @questions } %>
+<div class="two-column-layout">
+  <div class="main-content">
+    <%= render partial: 'shared/questions_list', locals: {questions: @questions} %>
+  </div>
 
-<div class="button-designs">
-  <% if user_signed_in? %>
-    <%= link_to 'Ask Question', new_question_path, class: 'button button-question' %>
-  <% else %>
-    <a href="javascript:void(0)" class="sign_in button button-question">Ask Question</a>
-  <% end %>
+  <div class="side-bar">
+    <%= render partial: 'shared/ask_question' %>
+  </div>
 </div>

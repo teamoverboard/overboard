@@ -1,6 +1,32 @@
 .vote {
-  width: 5%;
-  float: left;
+  border: 1px solid #e1e1e1;
+  width: 40px;
+  position: relative;
+  padding-top: 40px;
   text-align: center;
-  height: 100%;
+}
+
+.vote__count {
+  border-top: 1px solid #e1e1e1;
+}
+
+.vote__arrow {
+  display: block;
+  color: #ff4500;
+  line-height: 38px;
+  position: absolute;
+  /*background-color: yellow;*/
+  top: 0;
+  left: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: bold;
+  font-size: 2em;
+  /*padding: 15px;*/
+  /*margin-left: -2px;*/
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.vote__arrow:hover {
+  color: #ff6a33;
 }
