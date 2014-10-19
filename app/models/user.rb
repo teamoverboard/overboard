@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :votes
 
+  include Gravtastic
+  gravtastic default: "identicon"
+
   def self.from_omniauth(auth)
     where( auth.slice(:provider, :uid).to_hash ).first_or_create! do |user|
       user.email = auth.info.email

@@ -1,5 +1,6 @@
 <% commentable.comments.each do |comment| %>
   <div class="comment">
+    <%= image_tag comment.user.gravatar_url, class: 'avatar__small' %>
     <span class="comment__body"><%= comment.body %></span> - <span class="comment__user"><%= link_to "#{comment.user.username}", user_path(id: comment.user.id, username: comment.user.username) %></span>
   </div>
 <% end %>

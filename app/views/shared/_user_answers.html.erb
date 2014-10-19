@@ -5,10 +5,12 @@
 <% user.answers.each do |answer| %>
 	<p>
 		<%= render partial: "shared/vote", locals: { voteable: answer.question, voteable_type: "Question" } %>
+    <%= image_tag answer.question.user.gravatar_url, class: 'avatar__small' %>
 		<%= link_to "#{answer.title}", question_path(id: answer.question_id, title: answer.title.parameterize ) %>
 	</p>
 	<p>
   	<%= render partial: "shared/vote", locals: { voteable: answer, voteable_type: "Answer" } %>
+    <%= image_tag answer.user.gravatar_url, class: 'avatar__small' %>
     <%= parse(answer.content).html_safe %>
   </p>
   <p>Answered <%= time_ago_in_words(answer.created_at) %> ago.</p>

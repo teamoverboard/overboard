@@ -17,6 +17,8 @@ gem 'pg_search'
 
 gem 'rails4-autocomplete'
 
+gem 'gravtastic'
+
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails'

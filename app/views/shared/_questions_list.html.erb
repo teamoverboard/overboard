@@ -1,6 +1,7 @@
 <% questions.each do |question| %>
 	<p>
 		<%= render partial: "shared/vote", locals: { voteable: question, voteable_type: "Question" } %>
+    <%= image_tag question.user.gravatar_url, class: 'avatar__small' %>
 		<%= link_to "#{question.title}", question_path(id: question.id, title: question.title.parameterize ) %>
 	</p>
 	<p>

@@ -57,6 +57,7 @@ GEM
     github-markdown (0.6.7)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    gravtastic (3.2.6)
     hashie (3.3.1)
     hike (1.2.3)
     html-pipeline (1.11.0)
@@ -188,6 +189,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   github-markdown
+  gravtastic
   html-pipeline
   jquery-rails (= 4.0.0.beta2)
   jquery-ui-rails

@@ -1,4 +1,5 @@
 <h2><%= @user.name %></h2>
+<%= image_tag @user.gravatar_url, class: 'avatar__large' %>
 
 <%= render partial: "shared/user_questions", locals: { user: @user } %>
 <%= render partial: "shared/user_answers", locals: { user: @user } %>
