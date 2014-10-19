@@ -1,6 +1,7 @@
 /*
  *= require normalize
  *= require github-syntax-highlighting
+ *= require pgwmodal
 
  *= require_tree .
  *= require_self
