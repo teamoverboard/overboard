@@ -123,6 +123,10 @@ a:hover {}
 }
 
 @media screen and (max-width: 768px) {
+  .two-column-layout {
+    display: block;
+  }
+
   .sailor-header {
     display: none;
   }
@@ -143,10 +147,6 @@ a:hover {}
 
   .search {
     margin-top: 0.25em;
-  }
-
-  .two-column-layout {
-    margin: 1em 0 1em 0;
   }
 }
 

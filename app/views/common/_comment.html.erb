@@ -1,11 +1,12 @@
 <% commentable.comments.each do |comment| %>
   <div class="comment">
     <%= image_tag comment.user.gravatar_url, class: 'avatar__small' %>
-    <span class="comment__body"><%= comment.body %></span> - <span class="comment__user"><%= link_to "#{comment.user.username}", user_path(id: comment.user.id, username: comment.user.username) %></span>
+    <span class="comment__body"><%= comment.body %></span> - <span class="comment__user"><%= link_to comment.user.name, user_path(id: comment.user.id, username: comment.user.username) %></span>
   </div>
 <% end %>
+
 <% if user_signed_in? %>
   <%= form_for [commentable, Comment.new] do |f| %>
-    <%= f.text_field :body, placeholder: "Comment.." %>
+    <%= f.text_field :body, placeholder: 'Comment ...' %>
   <% end %>
 <% end %>
